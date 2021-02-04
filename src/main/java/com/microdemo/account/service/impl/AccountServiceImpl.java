@@ -2,15 +2,10 @@ package com.microdemo.account.service.impl;
 
 import com.microdemo.account.client.CustomerServiceClient;
 import com.microdemo.account.entity.Account;
-import com.microdemo.account.entity.Customer;
 import com.microdemo.account.repository.AccountRepository;
 import com.microdemo.account.service.AccountService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
