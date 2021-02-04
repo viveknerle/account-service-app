@@ -1,6 +1,5 @@
 package com.microdemo.account.service.impl;
 
-import com.microdemo.account.client.CustomerServiceClient;
 import com.microdemo.account.entity.Account;
 import com.microdemo.account.repository.AccountRepository;
 import com.microdemo.account.service.AccountService;
@@ -23,9 +22,6 @@ public class AccountServiceImpl implements AccountService {
   @Autowired
   private RestTemplate restTemplate;
 
-  @Autowired
-  private CustomerServiceClient customerServiceClient;
-
   @Override
   public List<Account> fetchAllAccounts() {
     log.info("Fetching all accounts information.");
@@ -41,7 +37,6 @@ public class AccountServiceImpl implements AccountService {
   @Override
   public Account saveAccountInfo(Account account) {
     log.info("Save account information.");
-    account.setCustomer(customerServiceClient.createCustomer(account.getCustomer()));
     return accountRepository.save(account);
   }
 
